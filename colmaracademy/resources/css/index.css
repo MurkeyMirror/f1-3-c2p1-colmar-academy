@@ -1,0 +1,383 @@
+/* Note to the reviewer of this project, I took a bit or artistic liscense
+      given that the design document was not internally consistent.
+      The design document needs a look over from an admin, as the only way I
+      could replicate any of its proportions whilst maintaining the aesthetic
+      sense of the previous projects (and just what looks good) was to modify
+      it. Everyone else on the slack that showed their version did the same,
+      and I joined them in taking liberty with the design document.*/
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.big-text {
+  font-weight: bold;
+  font-size: 68px;
+  margin: 0px;
+}
+
+.medium-text {
+  font-size: 40px;
+  margin: 0px;
+}
+
+.small-text {
+  font-size: 24px;
+  margin: 0px;
+}
+
+header {
+  height: 64px;
+  /*position: fixed;*/
+  align-items: center;
+  width: 100%;
+  /* Ensures the header stays on top of everything else as user scrolls */
+  z-index: 50;
+}
+
+#logo {
+  flex-grow: 1;
+  margin-left: 24px;
+  align-items: center;
+  /*border: 1px solid black;*/
+}
+
+header span {
+  color: gray;
+}
+
+nav {
+  margin-right: 16px;
+}
+
+nav span {
+  /* using 12 here because there is a 4px space put between every span*/
+  margin-right: 12px;
+}
+
+#mobile-icons {
+  display: none;
+}
+
+main {
+
+}
+
+.content-box-0 {
+  display: none;
+}
+
+
+/* First box from top down, directly under header */
+
+.content-box-1 {
+  /* Header is scrollable and out of the flow of the document*/
+  /* This is to make them not overlap*/
+  /*margin-top: 64px;*/
+  align-items: center;
+  background-color: lightgray;
+}
+
+.content-box-1 img {
+  margin: 32px 40px 32px 24px;
+  width: 60%;
+}
+
+.content-box-1 .text-content {
+  flex-direction: column;
+  width: 30%;
+}
+
+.content-box-1 .text-content p {
+  margin-bottom: 48px;
+}
+
+.content-box-1 .text-content a {
+  background-color: #4d4d4d;
+  padding: 8px 20px;
+  text-align: center;
+  color: white;
+}
+
+
+/* Second box */
+
+.content-box-2 {
+  background-color: white;
+}
+
+/* Left column */
+
+.content-box-2 .column-left {
+  margin: 32px 24px;
+  flex-grow: 1;
+  flex-direction: column;
+  width: 64%;
+}
+
+.content-box-2 .column-left img {
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.content-box-2 .column-left > p.medium-text {
+  margin-bottom: 24px;
+}
+
+/* Right column */
+
+.content-box-2 .column-right {
+  flex-direction: column;
+  /*width: 423px;*/
+  width: 40%;
+  border-left: 1px solid lightgray;
+  padding-top: 16px;
+}
+
+.article-1, .article-2, .article-3 {
+  border-bottom: 1px solid lightgray;
+}
+
+.column-right img {
+  width: 35%;
+  padding: 16px;
+}
+
+.article {
+  flex-direction: column;
+  justify-content: center;
+  margin: 16px 0px;
+  /* Something fucky was happening where it was shrinking the image
+        this solved the issue. */
+  width: 45%;
+}
+
+.article p {
+  margin: 8px 0px;
+}
+
+.article-3 {
+  background-color: lightgray;
+}
+
+
+/* Third box */
+
+.content-box-3 {
+  background-color: lightgray;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-box-3 > p {
+  margin: 32px 0px;
+}
+
+.content-box-3 .row-1 {
+  margin-bottom: 16px;
+  width: 100%;
+  justify-content: center;
+}
+
+.content-box-3 .row-2 {
+  margin-bottom: 32px;
+  width: 100%;
+  justify-content: center;
+}
+
+.content-box-3 .box {
+  flex-direction: column;
+  width: 25%;
+  background-color: white;
+}
+
+.content-box-3 .middle {
+  margin: 0px 32px;
+}
+
+.content-box-3 .text-content {
+  flex-direction: column;
+  width: 100%;
+  padding: 16px 16px 24px 16px;
+}
+
+.content-box-3 .text-content p {
+  margin: 8px 0px;
+}
+
+
+/* Fourth box */
+
+.content-box-4 {
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-box-4 p {
+  margin: 8px 0px;
+}
+
+.content-box-4 > p {
+  margin: 32px 0px;
+}
+
+
+.content-box-4 .column-left {
+  flex-direction: column;
+  width: 60%;
+  margin: 0px 16px 32px 24px;
+}
+
+.content-box-4 .column-left video {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+
+
+
+.content-box-4 .column-right {
+  flex-direction: column;
+  width: 40%;
+}
+
+.content-box-4 .column-right img {
+  /*width: 35%;*/
+  margin: 16px;
+}
+
+
+.content-box-4 .article-1 {
+  background-color: lightgray;
+}
+
+.content-box-4 .text-content {
+  flex-direction: column;
+  justify-content: center;
+  width: 45%;
+}
+
+
+/* Footer */
+
+footer {
+  border-top: 1px solid lightgray;
+  height: 64px;
+  align-items: center;
+  color: gray;
+}
+
+.copyright {
+  margin-left: 24px;
+  flex-grow: 1;
+}
+
+footer span {
+  margin-right: 24px;
+}
+
+
+/* Mobile CSS */
+
+@media only screen and (max-width: 1200px) {
+
+  body {
+    /*display: none;*/
+  }
+
+  /* load in images in html but hide them until used in mobile? */
+  header {
+    height: 64px;
+    background-color: white;
+    /*justify-content: space-around;*/
+  }
+
+  #logo {
+    display: none;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  #mobile-icons {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  main {
+
+  }
+
+  .content-box-0 {
+    display: block;
+    height: 180px;
+    background-color: darkgray;
+  }
+
+  .content-box-1 {
+    flex-direction: column;
+  }
+
+  .content-box-1 img {
+    display: none;
+  }
+
+  .content-box-1 .text-content {
+    width: auto;
+    margin: 32px 16px;
+  }
+
+  .content-box-1 .text-content p {
+    margin: 32px 0px 24px 0px;
+  }
+
+  .content-box-1 .text-content a {
+    width: auto;
+    justify-content: center;
+  }
+
+
+  .content-box-2 .column-left {
+    display: none;
+  }
+
+  .content-box-2 .column-right {
+    width: 100%;
+  }
+
+  .column-right img {
+    width: auto;
+  }
+
+  .article-1, .article-2, .article-3 {
+    flex-direction: column;
+    width: auto;
+  }
+
+
+
+
+
+
+  footer{
+
+  }
+
+}
+
+/* asdf;lkajsd;lkj */
